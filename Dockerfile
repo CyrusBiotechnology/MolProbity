@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER "Daniel Farrell" danpf@uw.edu
 
 # --builder
 ARG BUILDER=cctbx

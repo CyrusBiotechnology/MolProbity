@@ -12,7 +12,7 @@ RUN yum -y update && \
     yum -y install gcc gcc-c++ autoconf libtool make python wget git svn \
         zlib zlib-devel bzip2 bzip2-devel \
         libX11 libX11-devel libXext libXext-devel \
-        mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel
+        mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel python-six
 
 # get bootstrap.py
 RUN wget "https://raw.githubusercontent.com/cctbx/cctbx_project/master/libtbx/auto_build/bootstrap.py"
@@ -49,6 +49,7 @@ RUN mkdir -p modules/chem_data && \
 	svn --quiet --non-interactive --trust-server-cert --force co https://github.com/rlabduke/reference_data.git/trunk/Top8000/Top8000_ramachandran_pct_contour_grids rotarama_data && \
 	svn --quiet --non-interactive --trust-server-cert co https://github.com/rlabduke/reference_data.git/trunk/Top8000/Top8000_cablam_pct_contour_grids cablam_data
 ADD top8000_rama_z_dict.pkl modules/chem_data/rama_z/top8000_rama_z_dict.pkl
+# WARNING YOU MIGHT NEED TO source build/setpaths.sh again before you run your script!!!
 RUN cd / && \
 	source build/setpaths.sh && \
 	python modules/chem_data/cablam_data/rebuild_cablam_cache.py && \

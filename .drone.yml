@@ -9,7 +9,6 @@ steps:
     settings:
       repo: cyrus-containers/mmtbx
       tags:
-        - ${DRONE_COMMIT_SHA}
         - ${DRONE_COMMIT_BRANCH}
       debug: true
       json_key:

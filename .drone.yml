@@ -4,7 +4,6 @@ type: kubernetes
 name: default
 
 steps:
-
   - name: publish
     image: plugins/gcr
     settings:

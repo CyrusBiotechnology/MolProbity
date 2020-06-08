@@ -14,7 +14,7 @@ RUN yum -y update && \
         mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel python-six && updatedb
 
 # COPY base_tmp.tgz base_tmp.tgz
-RUN cd / && tar xf base_tmp.tgz
+# RUN cd / && tar xf base_tmp.tgz
 
 # get bootstrap.py
 # RUN wget "https://raw.githubusercontent.com/cctbx/cctbx_project/master/libtbx/auto_build/bootstrap.py"

@@ -11,7 +11,9 @@ RUN yum -y update && \
     yum -y install gcc gcc-c++ autoconf libtool make python wget git svn which php-cli mlocate zip java libXt.x86_64 \
         zlib zlib-devel bzip2 bzip2-devel xorg-x11-font-utils \
         libX11 libX11-devel libXext libXext-devel \
-        mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel python-six && updatedb
+        mesa-libGL mesa-libGL-devel mesa-libGLU mesa-libGLU-devel python-six \
+        gawk curl make git php bzip2-devel openssl zlib-devel gcc pango pango-devel gtk2-devel gcc-c++ \
+        php-posix && updatedb
 
 # COPY base_tmp.tgz base_tmp.tgz
 # RUN cd / && tar xf base_tmp.tgz
@@ -61,4 +63,6 @@ RUN cd / && \
 	cd molprobity && ./setup.sh && chmod +x /entrypoint.sh
 
 # You should run the command: /entrypoint.sh php -S 0.0.0.0:8000 -c /molprobity/config/php.ini
+# or from docker:
+# docker run -p 8000:8000 -w /molprobity -it molprobity /entrypoint.sh php -S 0.0.0.0:8000 -c /molprobity/config/php.ini
 ENTRYPOINT ["/entrypoint.sh"]

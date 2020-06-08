@@ -60,4 +60,5 @@ RUN cd / && \
 	./build/bin/mmtbx.rebuild_rotarama_cache && \
 	cd molprobity && ./setup.sh && chmod +x /entrypoint.sh
 
+# You should run the command: /entrypoint.sh php -S 0.0.0.0:8000 -c /molprobity/config/php.ini
 ENTRYPOINT ["/entrypoint.sh"]

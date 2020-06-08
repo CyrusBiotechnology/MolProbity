@@ -5,7 +5,7 @@ name: default
 
 steps:
   - name: publish
-    image: http://gcr.io/cyrus-containers/drone-plugins/gcr:linux-amd64
+    image: gcr.io/cyrus-containers/drone-plugins/gcr:linux-amd64
     settings:
       repo: cyrus-containers/mmtbx
       tags.normalize: true

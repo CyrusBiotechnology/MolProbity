@@ -4,7 +4,7 @@ FROM centos:7
 ARG BUILDER=cctbx
 
 # number of processors for building
-ARG NCPU=32
+ARG NCPU=8
 
 # update OS and install system packages for building
 RUN yum -y update && \

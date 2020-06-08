@@ -5,9 +5,10 @@ name: default
 
 steps:
   - name: publish
-    image: plugins/gcr
+    image: http://gcr.io/cyrus-containers/drone-plugins/gcr:linux-amd64
     settings:
       repo: cyrus-containers/mmtbx
+      tags.normalize: true
       tags:
         - ${DRONE_COMMIT_SHA}
         - ${DRONE_COMMIT_BRANCH}

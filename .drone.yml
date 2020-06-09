@@ -17,6 +17,20 @@ steps:
       json_key:
         from_secret: dockerconfigjson
 
+  - name: publish-tag
+    image: gcr.io/cyrus-containers/drone-plugins/gcr:linux-amd64
+    privileged: true
+    settings:
+      repo: cyrus-containers/mmtbx
+      tags.normalize: true
+      tags:
+        - ${DRONE_TAG}
+      debug: true
+      json_key:
+        from_secret: dockerconfigjson
+    when:
+      event: tag
+
 trigger:
   event:
     include:

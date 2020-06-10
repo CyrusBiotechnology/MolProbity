@@ -35,6 +35,7 @@ trigger:
   event:
     include:
     - push
+    - tag
 
 node_selector:
   CPUs: 8
